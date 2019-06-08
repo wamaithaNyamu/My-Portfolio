@@ -1,0 +1,46 @@
+body { 
+    margin: 0; 
+    
+
+}
+.container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: right;
+    z-index: 100;
+}
+section {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: right;
+    z-index: 100;
+
+}
+
+.myName{
+	top: 10px;
+	width: 100%;
+	// text-align: right;
+    color: red;
+    display:block;
+    h1{
+        font-size: 40px;
+        padding: 10vw;;
+
+    }
+    p{
+        font-size: 25px;
+ 
+    }
+
+}
