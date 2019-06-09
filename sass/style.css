@@ -1,7 +1,8 @@
 body {
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Dosis', sans-serif; }
+  font-family: 'Dosis', sans-serif;
+  background-color: black; }
 
 .container {
   position: absolute;
