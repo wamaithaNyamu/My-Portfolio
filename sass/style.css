@@ -24,6 +24,10 @@ section {
   align-content: center;
   z-index: 100; }
 
+.section {
+  background-color: black;
+  color: #fafafa; }
+
 .myName {
   top: 10px;
   width: 100%;
