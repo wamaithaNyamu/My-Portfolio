@@ -1,5 +1,7 @@
 body {
-  margin: 0; }
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Dosis', sans-serif; }
 
 .container {
   position: absolute;
@@ -29,6 +31,19 @@ section {
   display: block;
   padding: 10vw; }
   .myName h1 {
-    font-size: 40px; }
+    font-size: 60px; }
+
+.timeline {
+  color: lightgray;
+  position: fixed;
+  bottom: 50vh;
+  left: 4%;
+  top: 35%; }
+  .timeline .spanTimeline p {
+    text-align: center;
+    letter-spacing: 10px;
+    padding: 10px;
+    border-right: 2px solid #17141d;
+    border-left: 2px solid #3c354b; }
 
 /*# sourceMappingURL=style.css.map */

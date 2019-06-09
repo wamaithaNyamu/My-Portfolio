@@ -1,5 +1,7 @@
 body { 
     margin: 0; 
+    overflow-x: hidden;
+    font-family: 'Dosis', sans-serif;
     
 
 }
@@ -37,9 +39,40 @@ section {
     padding: 10vw;;
 
     h1{
-        font-size: 40px;
+        font-size: 60px;
 
     }
    
 
 }
+
+.timeline{
+    color: rgb(211, 211, 211);
+    position: fixed;
+    bottom: 50vh;
+    left: 4%;
+    top: 35%;
+    // padding: 30px;
+  
+  
+    .spanTimeline {
+          p{
+         text-align: center;
+        letter-spacing: 10px;
+         padding: 10px;
+         border-right: 2px solid #17141d;
+         border-left: 2px solid #3c354b;
+        }
+    }
+}
+// .timeline::after {
+//     content: '';
+//     position: absolute;
+//     width: .8px;
+//     background-color: #fafafa;
+//     top: 0;
+//     bottom: 0;
+//     left: 5vw;
+//     // margin-left: -3px;
+//   }
+  
