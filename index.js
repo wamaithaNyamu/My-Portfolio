@@ -57,8 +57,8 @@ var scene = new THREE.Scene();
 			})
 
 			camera.position.z = 80;
-			const controls = new THREE.OrbitControls(camera)
-  			controls.enableZoom = false //zoom happens on scroll which can be quite annoying
+			// const controls = new THREE.OrbitControls(camera)
+  			// controls.enableZoom = false //zoom happens on scroll which can be quite annoying
 
 	
 
@@ -83,7 +83,7 @@ var scene = new THREE.Scene();
 			
 			var animate = function () {
 				requestAnimationFrame( animate );
-				mesh.rotation.y += 0.01;
+				mesh.rotation.y += 0.001;
 				// mesh.rotation.y -= 0.01;
 
 				renderer.render( scene, camera );
