@@ -46,4 +46,23 @@ section {
     border-right: 2px solid #17141d;
     border-left: 2px solid #3c354b; }
 
+@media only screen and (max-width: 600px) {
+  .timeline {
+    color: lightgray;
+    position: fixed;
+    bottom: 50vh;
+    left: 0;
+    top: 3%; }
+    .timeline .spanTimeline p {
+      float: left;
+      width: 20vw;
+      font-size: 10px;
+      text-align: center;
+      letter-spacing: 4px;
+      justify-content: center;
+      padding: 5px;
+      margin: 0;
+      border-right: 2px solid #17141d;
+      border-left: 2px solid #3c354b; } }
+
 /*# sourceMappingURL=style.css.map */
