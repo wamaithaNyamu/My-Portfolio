@@ -1,5 +1,6 @@
 body { 
     margin: 0; 
+    overflow: hidden;
     
 
 }
@@ -22,7 +23,7 @@ section {
     justify-content: center;
     align-items: center;
     align-content: center;
-    text-align: right;
+    // text-align: right;
     z-index: 100;
 
 }
@@ -31,16 +32,14 @@ section {
 	top: 10px;
 	width: 100%;
 	// text-align: right;
-    color: red;
+    color: #17141d;
     display:block;
+    padding: 10vw;;
+
     h1{
         font-size: 40px;
-        padding: 10vw;;
 
     }
-    p{
-        font-size: 25px;
- 
-    }
+   
 
 }

@@ -1,5 +1,6 @@
 body {
-  margin: 0; }
+  margin: 0;
+  overflow: hidden; }
 
 .container {
   position: absolute;
@@ -20,18 +21,15 @@ section {
   justify-content: center;
   align-items: center;
   align-content: center;
-  text-align: right;
   z-index: 100; }
 
 .myName {
   top: 10px;
   width: 100%;
-  color: red;
-  display: block; }
+  color: #17141d;
+  display: block;
+  padding: 10vw; }
   .myName h1 {
-    font-size: 40px;
-    padding: 10vw; }
-  .myName p {
-    font-size: 25px; }
+    font-size: 40px; }
 
 /*# sourceMappingURL=style.css.map */
