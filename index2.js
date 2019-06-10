@@ -18,7 +18,7 @@ const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll
 
 var stats = new Stats();
 stats.showPanel(0);
-// document.body.appendChild( stats.dom );
+document.body.appendChild( stats.dom );
 
 // Renderer
 var renderer = new THREE.WebGLRenderer();
@@ -56,14 +56,13 @@ controls.update();
 // Particle Vars
 var particleCount = numberOfParticles;
 
-let spherePoints,
+let 
 		cubePoints,
 		rocketPoints,
 		thronePoints,
 		spacemanPoints;
 
 var particles = new THREE.Geometry(),
-		sphereParticles = new THREE.Geometry(),
 		cubeParticles = new THREE.Geometry(),
 		rocketParticles = new THREE.Geometry(),
 		throneParticles = new THREE.Geometry(),
@@ -78,10 +77,6 @@ var pMaterial = new THREE.PointCloudMaterial({
 });
 
 // Objects
-// sphere
-var geometry = new THREE.SphereGeometry( 9, 30, 30 );
-
-spherePoints = THREE.GeometryUtils.randomPointsInGeometry(geometry, particleCount)
 // cube
 var geometry = new THREE.BoxGeometry( 9, 9, 9 );
 
@@ -122,11 +117,26 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1
 	});
 });
 
-// THRONE -
-objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2Fbat%20tay.obj?v=1560150513467', function ( object ) {	
+// THRONE 
+objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FAcoustic_Guitar_01.obj?v=1560149442376', function ( object ) {	
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = .3;
+			let scale = 1.5;
+			
+			let area = new THREE.Box3();
+				area.setFromObject( child );
+			let yOffset = (area.max.y * scale) / 2;
+			
+			child.geometry.scale(scale,scale,scale);
+			thronePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+			createVertices(throneParticles, thronePoints, yOffset, 3);
+		}
+	});
+});
+objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FAcoustic_Guitar_01.obj?v=1560149442376', function ( object ) {	
+	object.traverse( function ( child ) {
+		if ( child instanceof THREE.Mesh ) {
+			let scale = 1.5;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
@@ -148,8 +158,6 @@ for (var p = 0; p < particleCount; p++) {
 
 	particles.vertices.push(vertex);
 }
-
-createVertices (sphereParticles, spherePoints, null, null)
 createVertices (cubeParticles, cubePoints, null, 1)
 
 function createVertices (emptyArray, points, yOffset = 0, trigger = null) {
@@ -197,9 +205,9 @@ function animate() {
 animate();
 setTimeout(toThrone, 500);
 
-function toSphere () {
+function toThrone(){
 	handleTriggers(0);
-	morphTo(sphereParticles);
+	morphTo(throneParticles);
 }
 
 function toCube () {
@@ -207,43 +215,37 @@ function toCube () {
 	morphTo(cubeParticles);
 }
 
-function toRocket () {
-	
+function toRocket () {	
 	handleTriggers(2);
 	morphTo(rocketParticles);
-
 }
 
 function toSpaceman () {
 	handleTriggers(3);
 	morphTo(spacemanParticles);
 }
-function toThrone(){
-	handleTriggers(0);
-	morphTo(throneParticles);
-}
+
 
 function morphTo (newParticles, color = '0xffffff') {
 	TweenMax.to(animationVars, .3, {ease:
-Power4.easeIn, speed: fullSpeed, onComplete: slowDown});
+	Power4.easeIn, speed: fullSpeed, onComplete: slowDown});
 	particleSystem.material.color.setHex(color);
 	
 	for (var i = 0; i < particles.vertices.length; i++){
 		TweenMax.to(particles.vertices[i], 4, {ease:
-Elastic.easeOut.config( 1, 0.75), x: newParticles.vertices[i].x, y: newParticles.vertices[i].y, z: newParticles.vertices[i].z})
+	Elastic.easeOut.config( 1, 0.75), x: newParticles.vertices[i].x, y: newParticles.vertices[i].y, z: newParticles.vertices[i].z})
 	}
 }
 
 function slowDown () {
 	TweenMax.to(animationVars, 4, {ease:
-Power2.easeOut, speed: normalSpeed, delay: 1});
+	Power2.easeOut, speed: normalSpeed, delay: 1});
 }
 
 triggers[0].addEventListener('click', toThrone)
 triggers[1].addEventListener('click', toCube)
 triggers[2].addEventListener('click', toRocket)
 triggers[3].addEventListener('click', toSpaceman)
-triggers[4].addEventListener('click', toThrone)
 
 
 function handleTriggers (disable) {
