@@ -1,0 +1,46 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Dosis'
+  }
+  
+  .triggers {
+    color: white;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    left: 4%;
+    top: 35vh;
+  }
+  .triggers span {
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    transition: opacity .5s, color .5s;
+    text-align: center;
+    letter-spacing: 10px;
+     padding: 10px;
+     border-left: 2px solid #3c354b;
+  }
+  .triggers span[data-disabled="true"] {
+    opacity: 0.3;
+    pointer-events: none;
+    color: white;
+  }
+  .triggers span:hover {
+    color: yellow;
+  }
+  ul{
+    padding-left: 10vw;
+  }
+  li{
+    list-style:circle;
+    text-align: left;
+    list-style-position: outside;
+    letter-spacing: 5px;
+
+  }

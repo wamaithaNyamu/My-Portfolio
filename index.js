@@ -8,17 +8,8 @@ const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/parti
 const defaultAnimationSpeed = 1,
 			morphAnimationSpeed = 3;
 
-
-
-
-
-
 // Triggers
 const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
-
-// var stats = new Stats();
-// stats.showPanel(0);
-// document.body.appendChild( stats.dom );
 
 // Renderer
 var renderer = new THREE.WebGLRenderer();
