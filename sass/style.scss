@@ -66,7 +66,15 @@ section {
          padding: 10px;
          border-right: 2px solid #17141d;
          border-left: 2px solid #3c354b;
+       
         }
+    }
+    li{
+        list-style:circle;
+        text-align: left;
+        list-style-position: outside;
+        letter-spacing: 5px;
+
     }
 }
 

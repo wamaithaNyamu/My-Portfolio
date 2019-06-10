@@ -38,16 +38,17 @@ var scene = new THREE.Scene();
 			
 			// });
 			const loader = new THREE.OBJLoader()
+			loader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FBrain.obj?v=1560148572474',
 			// loader.load('https://cdn.glitch.com/c101cd3f-90ac-45dd-9a2a-b3b33d2d39be%2Fb5c36325324cf21518df524ac298eb5a.obj?v=1560109361856',
 			// loader.load('https://cdn.glitch.com/c101cd3f-90ac-45dd-9a2a-b3b33d2d39be%2FFree_Brain.obj?v=1560108459278',
 			// loader.load('https://cdn.glitch.com/c101cd3f-90ac-45dd-9a2a-b3b33d2d39be%2FAfrica_final.obj?v=1560108200642',
-			loader.load('https://cdn.glitch.com/c101cd3f-90ac-45dd-9a2a-b3b33d2d39be%2FModesty_Veiled_Armchair.obj?v=1560108051253',
+			// loader.load('https://cdn.glitch.com/c101cd3f-90ac-45dd-9a2a-b3b33d2d39be%2FModesty_Veiled_Armchair.obj?v=1560108051253',
 			// loader.load('https://cdn.glitch.com/fcf3c007-b4eb-4250-ba6b-653fdab94ce3%2Fjapanese_temple.obj?1558792651869',
 			(obj) => {
 				// the request was successfull
-				let material = new THREE.PointsMaterial({ color: 'grey', size: 0.25 })
+				let material = new THREE.PointsMaterial({ color: 'grey', size: 2 })
 				mesh = new THREE.Points(obj.children[0].geometry, material)
-				mesh.position.y = -15 //this model is not exactly in the middle by default so I moved it myself
+				mesh.position.y = -85 //this model is not exactly in the middle by default so I moved it myself
 				// mesh.position.x = -100
 
 				scene.add(mesh)
@@ -62,7 +63,9 @@ var scene = new THREE.Scene();
 				console.error("loading .obj went wrong, ", err)
 			})
 
-			camera.position.z = 80;
+
+			
+			camera.position.z = 500;
 			// const controls = new THREE.OrbitControls(camera)
   			// controls.enableZoom = false //zoom happens on scroll which can be quite annoying
 
