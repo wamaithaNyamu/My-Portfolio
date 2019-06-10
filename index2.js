@@ -56,17 +56,16 @@ controls.update();
 // Particle Vars
 var particleCount = numberOfParticles;
 
-let 
-		cubePoints,
-		rocketPoints,
-		thronePoints,
-		spacemanPoints;
+let 	projectPoints,
+		homePoints,
+		contactPoints,
+		aboutPoints;
 
 var particles = new THREE.Geometry(),
-		cubeParticles = new THREE.Geometry(),
-		rocketParticles = new THREE.Geometry(),
-		throneParticles = new THREE.Geometry(),
-		spacemanParticles = new THREE.Geometry();
+		projectParticles = new THREE.Geometry(),
+		homeParticles = new THREE.Geometry(),
+		aboutParticles =  new THREE.Geometry(),
+		contactParticles = new THREE.Geometry();
 
 var pMaterial = new THREE.PointCloudMaterial({
 			color: particleColor,
@@ -76,27 +75,21 @@ var pMaterial = new THREE.PointCloudMaterial({
 			transparent: true
 });
 
-// Objects
-// cube
-var geometry = new THREE.BoxGeometry( 9, 9, 9 );
-
-cubePoints = THREE.GeometryUtils.randomPointsInGeometry(geometry, particleCount)
-
 // Custom (OGJ) Objects
 // PROJECTS
 var objLoader = new THREE.OBJLoader();
-objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FAcoustic_Guitar_01.obj?v=1560149442376', function ( object ) {
+objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1307%20Xbox%20Controller.obj?v=1560150840338', function ( object ) {
 
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = 1.5;
+			let scale = 1;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
 			let yOffset = (area.max.y * scale) / 2;
 			child.geometry.scale(scale,scale,scale);
-			rocketPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
-			createVertices(rocketParticles, rocketPoints, yOffset, 2);
+			projectPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+			createVertices(projectParticles, projectPoints, yOffset, 2);
 		}
 	});
 });
@@ -111,40 +104,41 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1
 			let yOffset = (area.max.y * scale) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
-			spacemanPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
-			createVertices(spacemanParticles, spacemanPoints, yOffset, 3);
+			contactPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+			createVertices(contactParticles, contactPoints, yOffset, 3);
 		}
 	});
 });
 
-// THRONE 
-objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FAcoustic_Guitar_01.obj?v=1560149442376', function ( object ) {	
+// home 
+objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FStillettos_01.obj?v=1560178283848', function ( object ) {	
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = 1.5;
+			let scale = 2;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
 			let yOffset = (area.max.y * scale) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
-			thronePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
-			createVertices(throneParticles, thronePoints, yOffset, 3);
+			homePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+			createVertices(homeParticles, homePoints, yOffset, 3);
 		}
 	});
 });
-objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FAcoustic_Guitar_01.obj?v=1560149442376', function ( object ) {	
+// ABOUT ME
+objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FCamera.obj?v=1560149926567', function ( object ) {	
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = 1.5;
+			let scale = 2.5;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
 			let yOffset = (area.max.y * scale) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
-			thronePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
-			createVertices(throneParticles, thronePoints, yOffset, 3);
+			aboutPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+			createVertices(aboutParticles, aboutPoints, yOffset, 3);
 		}
 	});
 });
@@ -158,7 +152,6 @@ for (var p = 0; p < particleCount; p++) {
 
 	particles.vertices.push(vertex);
 }
-createVertices (cubeParticles, cubePoints, null, 1)
 
 function createVertices (emptyArray, points, yOffset = 0, trigger = null) {
 	for (var p = 0; p < particleCount; p++) {
@@ -203,26 +196,26 @@ function animate() {
 }
 
 animate();
-setTimeout(toThrone, 500);
+setTimeout(toHome, 500);
 
-function toThrone(){
+function toHome(){
 	handleTriggers(0);
-	morphTo(throneParticles);
+	morphTo(homeParticles);
 }
 
-function toCube () {
+function toAbout () {
 	handleTriggers(1);
-	morphTo(cubeParticles);
+	morphTo(aboutParticles);
 }
 
-function toRocket () {	
+function toProject () {	
 	handleTriggers(2);
-	morphTo(rocketParticles);
+	morphTo(projectParticles);
 }
 
-function toSpaceman () {
+function toContact () {
 	handleTriggers(3);
-	morphTo(spacemanParticles);
+	morphTo(contactParticles);
 }
 
 
@@ -242,10 +235,10 @@ function slowDown () {
 	Power2.easeOut, speed: normalSpeed, delay: 1});
 }
 
-triggers[0].addEventListener('click', toThrone)
-triggers[1].addEventListener('click', toCube)
-triggers[2].addEventListener('click', toRocket)
-triggers[3].addEventListener('click', toSpaceman)
+triggers[0].addEventListener('click', toHome)
+triggers[1].addEventListener('click', toAbout)
+triggers[2].addEventListener('click', toProject)
+triggers[3].addEventListener('click', toContact)
 
 
 function handleTriggers (disable) {
