@@ -16,9 +16,9 @@ const defaultAnimationSpeed = 1,
 // Triggers
 const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
 
-var stats = new Stats();
-stats.showPanel(0);
-document.body.appendChild( stats.dom );
+// var stats = new Stats();
+// stats.showPanel(0);
+// document.body.appendChild( stats.dom );
 
 // Renderer
 var renderer = new THREE.WebGLRenderer();
@@ -186,10 +186,10 @@ let animationVars = {
 }
 
 function animate() {
-	stats.begin();
+	// stats.begin();
 	particleSystem.rotation.y += animationVars.speed;	
 	particles.verticesNeedUpdate = true; 
-	stats.end();
+	// stats.end();
 	
 	window.requestAnimationFrame( animate );
 	renderer.render( scene, camera );
