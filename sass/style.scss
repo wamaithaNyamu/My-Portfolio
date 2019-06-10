@@ -1,6 +1,6 @@
 body { 
     margin: 0; 
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: 'Dosis', sans-serif;
     background-color: black;
     
@@ -55,7 +55,7 @@ section {
     position: fixed;
     bottom: 50vh;
     left: 4%;
-    top: 35%;
+    top: 25vh;
     // padding: 30px;
   
   
@@ -74,6 +74,7 @@ section {
         text-align: left;
         list-style-position: outside;
         letter-spacing: 5px;
+        display: none;
 
     }
 }

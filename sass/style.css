@@ -43,7 +43,7 @@ section {
   position: fixed;
   bottom: 50vh;
   left: 4%;
-  top: 35%; }
+  top: 25vh; }
   .timeline .spanTimeline p {
     text-align: center;
     letter-spacing: 10px;
@@ -54,7 +54,8 @@ section {
     list-style: circle;
     text-align: left;
     list-style-position: outside;
-    letter-spacing: 5px; }
+    letter-spacing: 5px;
+    display: none; }
 
 @media only screen and (max-width: 600px) {
   .timeline {
