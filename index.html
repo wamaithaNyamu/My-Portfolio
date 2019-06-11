@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="index.css">
     <title>wamaitha.io</title>
 </head>
-<body>
+<body onload="myFunction()" >
     <!-- OBJs from Google (https://poly.google.com/) -->
-
+    <div id="loader">
+            <p>Loading</p>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
     <canvas id="canvas"></canvas>
 <div class="triggers">
 	<span data-disabled="true">Home</span>
@@ -33,7 +37,7 @@
             <h1>Jambo!</h1>
             <h3>My name is Wamaitha.I am currently exploring on Artificial Intelligence. So far so good! When I am not coding 
                 I enjoy reading and love taking long walks. 
-            </>
+            </h3>
         </div>
         <div id='projects'>
             <h1>STAY TUNED!</h1>
@@ -57,7 +61,7 @@
 
 </div>
   
-
+</div>
 
 
 

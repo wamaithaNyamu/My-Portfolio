@@ -1,5 +1,13 @@
+function myFunction() {
+	myVar = setTimeout(showPage, 4000);
+  }
+  
+  function showPage() {
+	document.getElementById("loader").style.display = "none";
+	document.getElementById("myDiv").style.display = "block";
+  }
 // Options
-const numberOfParticles = 30000;
+const numberOfParticles = 10000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
@@ -194,7 +202,7 @@ function animate() {
 }
 
 animate();
-setTimeout(toHome, 50);
+setTimeout(toHome, 500 );
 
 
 
@@ -241,7 +249,7 @@ function morphTo (newParticles, color = '0xffffff') {
 }
 
 function slowDown () {
-	TweenMax.to(animationVars, 4, {ease:
+	TweenMax.to(animationVars, 2, {ease:
 	Power2.easeOut, speed: normalSpeed, delay: 1});
 }
 
