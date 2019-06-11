@@ -1,5 +1,5 @@
 // Options
-const numberOfParticles = 2000;
+const numberOfParticles = 30000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
