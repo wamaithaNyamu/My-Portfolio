@@ -1,7 +1,8 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
     margin: 0;
-    font-family: 'Dosis'
+    font-family: 'Dosis';
+    color:#fafafa;
+
   }
   #canvas{
     width: 100vw;
@@ -100,7 +101,7 @@ body {
   
 }
 .sections #contacts{
-  color: black;
+  color: white;
   width: 70vh;
   
   
@@ -110,7 +111,7 @@ h6{
 
   color:#696969;
 }
-h5{
+home h5{
   color: #A9A9A9;
 }
 .icon-bar {
@@ -123,13 +124,13 @@ h5{
   text-align: center;
   padding: 16px;
   transition: all 0.3s ease;
-  color: #696969;
+  color: #fafafa;
   font-size: 25px;
   border-radius:50%;
 }
 
 .icon-bar a:hover {
-  background-color: #FFD700;
+  background-color: grey;
 }
 form{
   display: inline-flex;

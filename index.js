@@ -1,5 +1,5 @@
 // Options
-const numberOfParticles = 30000;
+const numberOfParticles = 10000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
@@ -78,7 +78,7 @@ var pMaterial = new THREE.PointCloudMaterial({
 // Custom (OGJ) Objects
 // PROJECTS
 var objLoader = new THREE.OBJLoader();
-objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1307%20Xbox%20Controller.obj?v=1560150840338', function ( object ) {
+objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FHigh-end_headset_01.obj?v=1560289457519', function ( object ) {
 
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
