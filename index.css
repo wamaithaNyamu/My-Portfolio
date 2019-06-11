@@ -1,10 +1,13 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     margin: 0;
-    overflow: hidden;
     font-family: 'Dosis'
   }
-  
+  #canvas{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
   .triggers {
     color: white;
     text-align: center;
@@ -25,6 +28,7 @@ body {
     letter-spacing: 10px;
      padding: 10px;
      border-left: 2px solid #3c354b;
+
   }
   .triggers span[data-disabled="true"] {
     opacity: 0.3;
@@ -44,3 +48,57 @@ body {
     letter-spacing: 5px;
 
   }
+  #about{ display: none}
+  #projects{ display: none}
+  #contacts{ display: none}
+  .sections{
+  color: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+.sections #home  h1{
+    cursor: pointer;
+    display: flex;
+    font-size: 60px;
+    margin: 10px;
+    padding: 10px;
+    transition: opacity .5s, color .5s;
+    text-align: right;
+}
+
+.sections #about  p {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  transition: opacity .5s, color .5s;
+  text-align: right;
+   padding: 10px;
+
+}
+
+.sections #projects{
+  width: 50vw;
+  top: 20vh; 
+  height: 60%;
+
+
+}
+.sections #projects h1{
+  text-align: center;
+  justify-content: center;
+  box-shadow: -1rem 0 3rem #000;
+  background-color: rgba(0, 0, 0, 0.198);
+  font-size:30px;
+  border-radius: 20px;
+  
+}
+.sections #contacts{
+  color: white
+}

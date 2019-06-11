@@ -1,5 +1,5 @@
 // Options
-const numberOfParticles = 10000;
+const numberOfParticles = 20000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
@@ -12,7 +12,8 @@ const defaultAnimationSpeed = 1,
 const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
 
 // Renderer
-var renderer = new THREE.WebGLRenderer();
+const canvas = document.querySelector('#canvas')
+var renderer = new THREE.WebGLRenderer({canvas});
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
@@ -36,13 +37,21 @@ var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHe
 camera.position.y = 25;
 camera.position.z = 36;
 
+// controls
+let controls = new THREE.OrbitControls( camera );
+
+// to disable zoom
+controls.enableZoom = false;
+
+// to disable rotation
+controls.enableRotate = false;
+
+// to disable pan
+controls.enablePan = false;
+
 // Lighting
 var light = new THREE.AmbientLight( 0x404040, 1 ); // soft white light
 scene.add( light );
-
-// Orbit Controls
-var controls = new THREE.OrbitControls( camera );
-controls.update();
 
 // Particle Vars
 var particleCount = numberOfParticles;
@@ -189,24 +198,40 @@ function animate() {
 animate();
 setTimeout(toHome, 500);
 
+
+function newDivHere(currentDiv, newDiv) {
+	document.getElementById(currentDiv).style.display="none";
+	document.getElementById(newDiv).style.display="block";
+}
+
 function toHome(){
 	handleTriggers(0);
 	morphTo(homeParticles);
-}
+	toggle_visibility('home', 'about', 'projects', 'contacts')
+
+
+	}
 
 function toAbout () {
 	handleTriggers(1);
 	morphTo(aboutParticles);
+	toggle_visibility('about', 'home', 'projects', 'contacts')
 }
 
 function toProject () {	
 	handleTriggers(2);
 	morphTo(projectParticles);
+	toggle_visibility('projects', 'about', 'home', 'contacts')
+
+
 }
 
 function toContact () {
 	handleTriggers(3);
 	morphTo(contactParticles);
+	toggle_visibility('contacts', 'home', 'projects', 'about')
+
+
 }
 
 
@@ -234,10 +259,38 @@ triggers[3].addEventListener('click', toContact)
 
 function handleTriggers (disable) {
 	for (var x = 0; x < triggers.length; x++) {
-		if (disable === x) {
-			triggers[x].setAttribute('data-disabled', true)		
+		if (disable == x) {
+			triggers[x].setAttribute('data-disabled', true)	
+				
 		} else {
 			triggers[x].setAttribute('data-disabled', false)
 		}
 	}	
+}
+
+	function toggle_visibility(id1, id2, id3, id4) {
+		var e = document.getElementById(id1);
+		var g = document.getElementById(id2);
+		var h = document.getElementById(id3);
+		var j = document.getElementById(id4);
+		if(e.style.display == 'block'){
+		   e.style.display = 'none';
+		   g.style.display = 'none';
+		   h.style.display = 'none';
+		   j.style.display = 'none';
+
+		
+		
+		}
+		
+		else{
+		   e.style.display = 'block';
+		   g.style.display = 'none';
+		   h.style.display = 'none';
+		   j.style.display = 'none';
+		}
+	
+	
+	
+
 }
