@@ -7,7 +7,7 @@ function myFunction() {
 	document.getElementById("myDiv").style.display = "block";
   }
 // Options
-const numberOfParticles = 10000;
+const numberOfParticles = 30000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
