@@ -69,30 +69,30 @@ body {
     transition: opacity .5s, color .5s;
     text-align: right;
 }
-
-.sections #about  p {
+.sections #about h1{
+  /* background-color: red; */
+  text-align: left;
+  
+}
+.sections #about  h3 {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   margin: 10px;
   padding: 10px;
   transition: opacity .5s, color .5s;
-  text-align: right;
-   padding: 10px;
-
+  text-align: Left;
+  
 }
 
 .sections #projects{
-  width: 50vw;
-  top: 20vh; 
+  width: 20vw;
   height: 60%;
-
 
 }
 .sections #projects h1{
-  text-align: center;
-  justify-content: center;
+ 
   box-shadow: -1rem 0 3rem #000;
   background-color: rgba(0, 0, 0, 0.198);
   font-size:30px;
@@ -100,5 +100,50 @@ body {
   
 }
 .sections #contacts{
-  color: white
+  color: black;
+  width: 70vh;
+  
+  
+}
+
+h6{
+
+  color:#696969;
+}
+h5{
+  color: #A9A9A9;
+}
+.icon-bar {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: #696969;
+  font-size: 25px;
+  border-radius:50%;
+}
+
+.icon-bar a:hover {
+  background-color: #FFD700;
+}
+form{
+  display: inline-flex;
+  flex-direction: column;
+
+}
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form .message{
+  height: 10vh;
+
 }

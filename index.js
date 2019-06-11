@@ -1,5 +1,5 @@
 // Options
-const numberOfParticles = 20000;
+const numberOfParticles = 2000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
@@ -186,23 +186,17 @@ let animationVars = {
 }
 
 function animate() {
-	// stats.begin();
 	particleSystem.rotation.y += animationVars.speed;	
 	particles.verticesNeedUpdate = true; 
-	// stats.end();
 	
 	window.requestAnimationFrame( animate );
 	renderer.render( scene, camera );
 }
 
 animate();
-setTimeout(toHome, 500);
+setTimeout(toHome, 50);
 
 
-function newDivHere(currentDiv, newDiv) {
-	document.getElementById(currentDiv).style.display="none";
-	document.getElementById(newDiv).style.display="block";
-}
 
 function toHome(){
 	handleTriggers(0);
