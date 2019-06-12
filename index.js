@@ -25,7 +25,7 @@ const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/parti
 			particleSize = .1;
 
 const defaultAnimationSpeed = 1,
-			morphAnimationSpeed = 3;
+			morphAnimationSpeed = 1;
 
 // Triggers
 const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
@@ -105,7 +105,7 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FH
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
-			let yOffset = (area.max.y * scale) / 2;
+			let yOffset = (area.max.y * 1) / 2;
 			child.geometry.scale(scale,scale,scale);
 			projectPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
 			createVertices(projectParticles, projectPoints, yOffset, 2);
@@ -120,7 +120,7 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
-			let yOffset = (area.max.y * scale) / 2;
+			let yOffset = (area.max.y * .1) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
 			contactPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
@@ -137,7 +137,7 @@ objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FSt
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
-			let yOffset = (area.max.y * scale) / 2;
+			let yOffset = (area.max.y * 1) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
 			homePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
@@ -153,7 +153,7 @@ objLoader.load('https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FCa
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
-			let yOffset = (area.max.y * scale) / 2;
+			let yOffset = (area.max.y * 1) / 2;
 			
 			child.geometry.scale(scale,scale,scale);
 			aboutPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
