@@ -207,7 +207,8 @@ function animate() {
 }
 
 animate();
-setTimeout(toHome, 100 );
+toHome()
+// setTimeout(toHome, 100 );
 
 
 
