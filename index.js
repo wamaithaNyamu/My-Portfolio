@@ -1,8 +1,8 @@
 function myFunction() {
 
-	setTimeout(toHome, 5000);
+	// setTimeout(toHome, 5000);
 
-	setTimeout(showPage, 4900);
+	setTimeout(showPage, 5500);
 
   }
   
@@ -207,8 +207,8 @@ function animate() {
 }
 
 animate();
-toHome()
-// setTimeout(toHome, 100 );
+// toHome()
+setTimeout(toHome, 500 );
 
 
 
@@ -244,19 +244,19 @@ function toContact () {
 
 
 function morphTo (newParticles, color = '0xffffff') {
-	TweenMax.to(animationVars, .3, {ease:
-	Power4.easeIn, speed: fullSpeed, onComplete: slowDown});
+	TweenMax.to(animationVars, .03, {ease:
+	Power2.easeIn, speed: fullSpeed, onComplete: slowDown});
 	particleSystem.material.color.setHex(color);
 	
 	for (var i = 0; i < particles.vertices.length; i++){
-		TweenMax.to(particles.vertices[i], 4, {ease:
-	Elastic.easeOut.config( 1, 0.75), x: newParticles.vertices[i].x, y: newParticles.vertices[i].y, z: newParticles.vertices[i].z})
+		TweenMax.to(particles.vertices[i], 5, {ease:
+	Elastic.easeOut.config( 1, 0.95), x: newParticles.vertices[i].x, y: newParticles.vertices[i].y, z: newParticles.vertices[i].z})
 	}
 }
 
 function slowDown () {
 	TweenMax.to(animationVars, 2, {ease:
-	Power2.easeOut, speed: normalSpeed, delay: 1});
+	Power2.easeOut, speed: normalSpeed, delay: .1});
 }
 
 triggers[0].addEventListener('click', toHome)
