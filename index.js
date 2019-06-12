@@ -1,10 +1,9 @@
 function myFunction() {
 
-	window.onload = setTimeout(() => {
-		toHome()
+	setTimeout(toHome, 5000);
 
-		showPage()
-	}, 6000);
+	setTimeout(showPage, 4900);
+
   }
   
   function showPage() {
@@ -208,8 +207,7 @@ function animate() {
 }
 
 animate();
-toHome()
-// setTimeout(toHome, 100 );
+setTimeout(toHome, 100 );
 
 
 
