@@ -105,7 +105,7 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FH
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
-			let yOffset = (area.max.y * .3) / 2;
+			let yOffset = (area.max.y * .05) / 1.5;
 			child.geometry.scale(scale,scale,scale);
 			projectPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
 			createVertices(projectParticles, projectPoints, yOffset, 2);
