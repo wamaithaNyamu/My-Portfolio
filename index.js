@@ -95,7 +95,7 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FH
 
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = 1;
+			let scale = .8;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
@@ -110,7 +110,7 @@ objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2FH
 objLoader.load( 'https://cdn.glitch.com/6a29bec8-9471-403e-a502-375b8f18bbc2%2F1333%20Phone.obj?v=1560149942462', function ( object ) {	
 	object.traverse( function ( child ) {
 		if ( child instanceof THREE.Mesh ) {
-			let scale = .3;
+			let scale = .2;
 			
 			let area = new THREE.Box3();
 				area.setFromObject( child );
@@ -207,7 +207,6 @@ function animate() {
 }
 
 animate();
-// toHome()
 setTimeout(toHome, 500 );
 
 
