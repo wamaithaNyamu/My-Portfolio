@@ -1,7 +1,4 @@
 function myFunction() {
-
-	// setTimeout(toHome, 5000);
-
 	setTimeout(showPage, 5500);
 
   }
@@ -11,8 +8,17 @@ function myFunction() {
 	document.getElementById("loader").style.display = "none";
 	document.getElementById("myDiv").style.display = "block";
   }
+// MEDIA QUERIES
+const mediaQuery1 = window.matchMedia("(max-width: 600px)")
+const mediaQuery2 = window.matchMedia("(min-width: 600px)")
+const mediaQuery3 = window.matchMedia("(min-width: 768px)")
+const mediaQuery4 = window.matchMedia("(min-width: 992px)")
+const mediaQuery5 = window.matchMedia("(min-width: 1200px)")
+
+
+const numberOfParticles = 10000
+
 // Options
-const numberOfParticles = 30000;
 		
 const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
 			particleColor = '0xFFFFFF',
@@ -207,7 +213,7 @@ function animate() {
 }
 
 animate();
-setTimeout(toHome, 500 );
+setTimeout(toHome, 5000 );
 
 
 
