@@ -414,8 +414,10 @@ form .message{
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: white;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  background: #FF0099;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
   left: 6px;
