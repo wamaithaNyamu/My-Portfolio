@@ -8,12 +8,8 @@ function myFunction() {
 	document.getElementById("loader").style.display = "none";
 	document.getElementById("myDiv").style.display = "block";
   }
-// MEDIA QUERIES
-const mediaQuery1 = window.matchMedia("(max-width: 600px)")
-const mediaQuery2 = window.matchMedia("(min-width: 600px)")
-const mediaQuery3 = window.matchMedia("(min-width: 768px)")
-const mediaQuery4 = window.matchMedia("(min-width: 992px)")
-const mediaQuery5 = window.matchMedia("(min-width: 1200px)")
+// TODO MEDIA QUERIES
+
 
 
 const numberOfParticles = 10000
