@@ -215,6 +215,8 @@ body {
     padding: 10px;
     transition: opacity .5s, color .5s;
     text-align: Left;
+    width: 40vh;
+
     
   }
  }
