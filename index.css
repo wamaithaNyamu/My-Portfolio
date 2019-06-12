@@ -27,7 +27,6 @@ body {
   #canvas{
     width: 100vw;
     height: 100vh;
-    position: fixed;
   }
 
   /* TRIGGERS - THE SIDE NAV BUTTONS */
