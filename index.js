@@ -1,10 +1,14 @@
 function myFunction() {
-	setTimeout(toHome, 5000);
-	setTimeout(showPage, 9000);
 
+	window.onload = setTimeout(() => {
+		toHome()
+
+		showPage()
+	}, 6000);
   }
   
   function showPage() {
+
 	document.getElementById("loader").style.display = "none";
 	document.getElementById("myDiv").style.display = "block";
   }
@@ -204,7 +208,8 @@ function animate() {
 }
 
 animate();
-setTimeout(toHome, 100 );
+toHome()
+// setTimeout(toHome, 100 );
 
 
 
